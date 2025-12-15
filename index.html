@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Perfect Pour - Coin System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="level-picker">
+        <select id="lv-select"></select>
+        <button id="lv-btn">PLAY</button>
+    </div>
+
+    <div id="booster-panel">
+        <div id="boost-scale" class="booster-btn" title="Biến hình lọ">🧪</div>
+        <div id="boost-margin" class="booster-btn" title="Tăng vùng mục tiêu">🎯</div>
+    </div>
+
+    <div id="booster-modal">
+        <div class="b-modal-content">
+            <h3>BIẾN HÌNH LỌ</h3>
+            <div class="b-option" id="opt-expand" style="border-color: #4caf50;">MỞ RỘNG (+5%)</div>
+            <div class="b-option" id="opt-shrink" style="border-color: #f44336;">THU HẸP (-5%)</div>
+            <div class="b-option" id="opt-cancel" style="background: #eee; color: #666; font-size: 12px;">HỦY BỎ</div>
+        </div>
+    </div>
+
+    <div id="game-container">
+        <div id="tutorial-layer">
+            <img id="hand-img" src="https://cdn-icons-png.flaticon.com/512/2037/2037181.png" class="hand-icon" alt="hand">
+            <div id="tut-txt" class="tutorial-text">KÉO SANG PHẢI ĐỂ MỞ VÒI</div>
+        </div>
+
+        <div id="hud-top">
+            <div id="hud-row-1">
+                <div id="level-indicator">LEVEL 1</div>
+                <div id="coin-display">💰 <span id="coin-count">0</span></div>
+            </div>
+            <div id="meter-container"><div id="meter-fill"></div></div>
+            <div style="display: flex; gap: 15px; font-size: 13px; color: #fff; font-weight: bold;">
+                <div class="info-badge">MỤC TIÊU: <span id="target-txt" style="color:#ffeb3b">0%</span></div>
+                <div class="info-badge">DƯ: <span id="drops-txt" style="color:#ffeb3b">0 GIỌT</span></div>
+            </div>
+        </div>
+        
+        <div id="faucet-system">
+            <div id="valve"></div>
+            <div id="spout"></div>
+            <div id="nozzle"></div>
+        </div>
+        <div id="stream"></div>
+        <div id="trough">
+            <div class="trough-shape"><div class="trough-mask"><div class="trough-fill"><div class="wave wave1"></div><div class="wave wave2"></div></div></div>
+                <div class="overflow-indicator"></div>
+            </div>
+            <div class="trough-indicator">0.0</div>
+        </div>
+        
+        <div id="glass-wrapper">
+            <div id="glass" class="shape-standard">
+                <div id="target-zone"></div>
+                <div class="water-fill">
+                    <div class="wave wave1"></div>
+                    <div class="wave wave2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup">
+        <div class="modal">
+            <h2 id="status">KẾT QUẢ</h2>
+            <p id="desc" style="color: #444; margin-bottom: 20px;"></p>
+            <div id="coin-reward" style="font-weight: bold; color: #ffd700; font-size: 24px; margin-bottom: 20px; display: none;">+40 💰</div>
+            <button id="next-btn" class="btn" style="background: #1a237e; color: white; display: none;">TIẾP THEO</button>
+            <button id="retry-btn" class="btn" style="background: #e0e0e0; color: #333;">THỬ LẠI</button>
+        </div>
+    </div>
+
+    <script src="levels.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
