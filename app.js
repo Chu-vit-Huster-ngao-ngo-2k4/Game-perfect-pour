@@ -222,8 +222,8 @@ function init() {
 
     // Only show tutorials on these levels: 1, 2, 11, 14
     if ([1,2,11,14].includes(lv.id)) showMechanicTutorial(lv, true);
-    // Booster tutorial: keep only for level 2
-    if (lv.id === 2) showBoosterTutorial(lv);
+    // Booster tutorial: move to level 4 (no booster on level 2)
+    if (lv.id === 4) showBoosterTutorial(lv);
 
     window.troughEl = document.getElementById('trough');
     if (lv.trough) {
